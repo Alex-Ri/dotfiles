@@ -1,9 +1,12 @@
-# font-family = Menlo
-# font-family = Fira Code Powerline
-font-family = "Geist Mono"
+font-family = ""
+#font-family = "Geist Mono"
+font-family = "Fira Code"
 font-size = 14
 theme = nord-wave
-adjust-cell-height = 20%
+adjust-cell-height = 10%
 window-save-state = always
 macos-titlebar-style = transparent
 background-opacity = 0.95
+cursor-opacity = 0.8
+background = "#1B1B1B"
+link-url = true
