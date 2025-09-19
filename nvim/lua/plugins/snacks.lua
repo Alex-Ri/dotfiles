@@ -5,14 +5,18 @@ return {
       image = { enabled = true },
 
       picker = {
-        hidden = true, -- for hidden files
-        ignored = true, -- for .gitignore files
-        sources = {
-          files = {
-            hidden = true,
-            ignored = true,
-            exclude = { "node_modules", ".nuxt" },
-          },
+        hidden = true,
+        ignored = true,
+
+        exclude = {
+          ".git",
+          "node_modules",
+          ".nuxt",
+          ".next",
+        },
+        files = {
+          ignored = false,
+          hidden = true,
         },
       },
     },
