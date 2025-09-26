@@ -1,12 +1,38 @@
 font-family = ""
-#font-family = "Geist Mono"
-font-family = "Fira Code"
+# font-family = "Fira Code"
+font-family = "0xProto"
 font-size = 14
-theme = nord-wave
-adjust-cell-height = 10%
+adjust-cell-height = 20%
+
+mouse-hide-while-typing = true
+copy-on-select = clipboard
+scrollback-limit = 10000000
+
 window-save-state = always
-macos-titlebar-style = transparent
-background-opacity = 0.95
-cursor-opacity = 0.8
+window-padding-x = 6
+window-padding-y = 6
+window-padding-balance = true
+window-decoration = true
+gtk-titlebar = true
+background-opacity = 0.90
+background-blur = 20
 background = "#1B1B1B"
+cursor-opacity = 0.8
 link-url = true
+macos-titlebar-style = transparent
+theme = nord-wave
+
+# alt-key bindings (beginning/end of line)
+keybind = alt+h=text:\x01
+keybind = alt+l=text:\x05
+
+# cmd-key bindings (beginning/end of line)
+keybind = cmd+left=text:\x01
+keybind = cmd+right=text:\x05
+
+# alt-arrow bindings (word movements)
+keybind = alt+left=esc:b
+keybind = alt+right=esc:f
+
+# save in nvim
+keybind = super+s=text:\x1b:w\n
