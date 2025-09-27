@@ -29,12 +29,12 @@ key-mapping.preset = 'qwerty'
 on-focused-monitor-changed = ['move-mouse monitor-lazy-center']
 
 [gaps]
-inner.horizontal = 16
-inner.vertical = 16
-outer.left = 16
-outer.bottom = 16
-outer.top = 16
-outer.right = 16
+inner.horizontal = 12
+inner.vertical = 12
+outer.left = 12
+outer.bottom = 12
+outer.top = 12
+outer.right = 12
 
 # 'main' binding mode declaration
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
@@ -63,10 +63,10 @@ alt-slash = 'layout tiles horizontal vertical'
 alt-comma = 'layout accordion horizontal vertical'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#focus
-alt-h = 'focus left'
-alt-j = 'focus down'
-alt-k = 'focus up'
-alt-l = 'focus right'
+cmd-alt-h = 'focus left'
+cmd-alt-j = 'focus down'
+cmd-alt-k = 'focus up'
+cmd-alt-l = 'focus right'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#move
 alt-shift-h = 'move left'
@@ -81,6 +81,7 @@ alt-shift-equal = 'resize smart +50'
 # See: https://nikitabobko.github.io/AeroSpace/commands#workspace
 alt-b = 'workspace browser'
 alt-t = 'workspace terminal'
+alt-d = 'workspace design'
 alt-c = 'workspace communication'
 alt-m = 'workspace mail'
 alt-1 = 'workspace 1'
@@ -90,6 +91,7 @@ alt-3 = 'workspace 3'
 # See: https://nikitabobko.github.io/AeroSpace/commands#move-node-to-workspace
 alt-shift-b = 'move-node-to-workspace browser'
 alt-shift-t = 'move-node-to-workspace terminal'
+alt-shift-d = 'move-node-to-workspace design'
 alt-shift-c = 'move-node-to-workspace communication'
 alt-shift-m = 'move-node-to-workspace mail'
 alt-shift-1 = 'move-node-to-workspace 1'
@@ -122,10 +124,11 @@ alt-shift-k = ['join-with up', 'mode main']
 alt-shift-l = ['join-with right', 'mode main']
 
 [workspace-to-monitor-force-assignment]
-browser = 2
-terminal = 2
 mail = 1
 communication = 1
+browser = 2
+terminal = 2
+design = 2
 1 = 1
 2 = 2
 3 = 'built-in'
@@ -144,6 +147,15 @@ run = "move-node-to-workspace browser"
 [[on-window-detected]]
 if.app-id = "com.brave.Brave"
 run = "move-node-to-workspace browser"
+
+# design 
+[[on-window-detected]]
+if.app-id = "com.seriflabs.affinitydesigner"
+run = "move-node-to-workspace design"
+
+[[on-window-detected]]
+if.app-id = "com.seriflabs.affinitydesigner 2"
+run = "move-node-to-workspace design"
 
 # communication
 [[on-window-detected]]
