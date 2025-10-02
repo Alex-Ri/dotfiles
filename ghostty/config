@@ -1,9 +1,10 @@
 font-family = ""
 # font-family = "Fira Code"
-font-family = "0xProto"
-font-size = 14
+# font-family = "0xProto"
+font-family = "Iosevka Term Medium Extended Oblique"
+font-size = 15
 adjust-cell-height = 20%
-
+# adjust-cell-width = 5%
 mouse-hide-while-typing = true
 copy-on-select = clipboard
 scrollback-limit = 10000000
@@ -20,7 +21,7 @@ background = "#1B1B1B"
 cursor-opacity = 0.8
 link-url = true
 macos-titlebar-style = transparent
-theme = nord-wave
+theme = Nord Wave
 
 # alt-key bindings (beginning/end of line)
 keybind = alt+h=text:\x01
