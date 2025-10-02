@@ -2,8 +2,12 @@ return {
   {
     "folke/snacks.nvim",
     opts = {
-      image = { enabled = true },
-
+      image = {
+        enabled = true,
+        doc = {
+          inline = false,
+        },
+      },
       picker = {
         hidden = true,
         ignored = true,
