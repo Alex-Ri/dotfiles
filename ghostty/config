@@ -20,7 +20,8 @@ background-blur = 50
 background = "#1B1B1B"
 cursor-opacity = 0.8
 link-url = true
-macos-titlebar-style = transparent
+macos-titlebar-style = hidden
+macos-titlebar-proxy-icon = hidden
 theme = Nord Wave
 
 # alt-key bindings (beginning/end of line)
