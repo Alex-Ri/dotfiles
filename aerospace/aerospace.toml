@@ -26,7 +26,7 @@ key-mapping.preset = 'qwerty'
 # Drop it from your config, if you don't like this behavior
 # See https://nikitabobko.github.io/AeroSpace/guide#on-focus-changed-callbacks
 # See https://nikitabobko.github.io/AeroSpace/commands#move-mouse
-on-focused-monitor-changed = ['move-mouse monitor-lazy-center']
+# on-focused-monitor-changed = ['move-mouse monitor-lazy-center']
 
 [gaps]
 inner.horizontal = 12
@@ -59,8 +59,8 @@ alt-ctrl-cmd-shift-b = "exec-and-forget open -a Arc"
 
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#layout
-alt-slash = 'layout tiles horizontal vertical'
-alt-comma = 'layout accordion horizontal vertical'
+# alt-semicolon = 'layout tiles horizontal vertical'
+# alt-comma = 'layout tiles horizontal vertical'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#focus
 cmd-alt-h = 'focus left'
@@ -84,9 +84,8 @@ alt-t = 'workspace terminal'
 alt-d = 'workspace design'
 alt-c = 'workspace communication'
 alt-m = 'workspace mail'
+alt-g = 'workspace general'
 alt-1 = 'workspace 1'
-alt-2 = 'workspace 2'
-alt-3 = 'workspace 3'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#move-node-to-workspace
 alt-shift-b = 'move-node-to-workspace browser'
@@ -94,9 +93,8 @@ alt-shift-t = 'move-node-to-workspace terminal'
 alt-shift-d = 'move-node-to-workspace design'
 alt-shift-c = 'move-node-to-workspace communication'
 alt-shift-m = 'move-node-to-workspace mail'
+alt-shift-g = 'move-node-to-workspace general'
 alt-shift-1 = 'move-node-to-workspace 1'
-alt-shift-2 = 'move-node-to-workspace 2'
-alt-shift-3 = 'move-node-to-workspace 3'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#workspace-back-and-forth
 alt-tab = 'workspace-back-and-forth'
@@ -104,40 +102,39 @@ alt-tab = 'workspace-back-and-forth'
 alt-shift-tab = 'move-workspace-to-monitor --wrap-around next'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#mode
-alt-shift-semicolon = 'mode service'
+# alt-shift-semicolon = 'mode service'
 # 'service' binding mode declaration.
 
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
-[mode.service.binding]
-esc = ['reload-config', 'mode main']
-r = ['flatten-workspace-tree', 'mode main'] # reset layout
-#s = ['layout sticky tiling', 'mode main'] # sticky is not yet supported https://github.com/nikitabobko/AeroSpace/issues/2
-f = [
-  'layout floating tiling',
-  'mode main',
-] # Toggle between floating and tiling layout
-backspace = ['close-all-windows-but-current', 'mode main']
-
-alt-shift-h = ['join-with left', 'mode main']
-alt-shift-j = ['join-with down', 'mode main']
-alt-shift-k = ['join-with up', 'mode main']
-alt-shift-l = ['join-with right', 'mode main']
+# [mode.service.binding]
+# esc = ['reload-config', 'mode main']
+# r = ['flatten-workspace-tree', 'mode main'] # reset layout
+# #s = ['layout sticky tiling', 'mode main'] # sticky is not yet supported https://github.com/nikitabobko/AeroSpace/issues/2
+# f = [
+#   'layout floating tiling',
+#   'mode main',
+# ] # Toggle between floating and tiling layout
+# backspace = ['close-all-windows-but-current', 'mode main']
+#
+# alt-shift-h = ['join-with left', 'mode main']
+# alt-shift-j = ['join-with down', 'mode main']
+# alt-shift-k = ['join-with up', 'mode main']
+# alt-shift-l = ['join-with right', 'mode main']
 
 [workspace-to-monitor-force-assignment]
-mail = 1
 communication = 1
+mail = 2
 browser = 2
 terminal = 2
 design = 2
-1 = 1
-2 = 2
-3 = 'built-in'
+general = 2
+1 = 'built-in'
 
 # ----- workspace app assignment -----
 # terminal
 [[on-window-detected]]
 if.app-id = "net.ghostty.app"
-run = "move-node-to-workspace terminal"
+run = ["layout tiling", "move-node-to-workspace terminal"]
 
 # browser 
 [[on-window-detected]]
@@ -159,12 +156,12 @@ run = "move-node-to-workspace design"
 
 # communication
 [[on-window-detected]]
-if.app-id = "com.microsoft.teams2"
+if.app-id = "com.whatsapp.app"
 run = "move-node-to-workspace communication"
 
 [[on-window-detected]]
-if.app-id = "com.whatsapp.app"
-run = "move-node-to-workspace communication"
+if.app-id = "com.microsoft.teams2"
+run = ["layout tiling", "move-node-to-workspace communication"]
 
 # mail
 [[on-window-detected]]
@@ -178,12 +175,16 @@ run = "move-node-to-workspace mail"
 # workspaces
 [[on-window-detected]]
 if.app-id = "com.apple.finder"
-run = "move-node-to-workspace 3"
+run = "layout tiling"
 
 [[on-window-detected]]
 if.app-id = "com.install4j.9695-5942-3526-4793.58"
-run = "move-node-to-workspace 2"
+run = "move-node-to-workspace terminal"
 
 [[on-window-detected]]
 if.app-id = "com.microsoft.Excel"
-run = "move-node-to-workspace 2"
+run = "move-node-to-workspace general"
+
+# [[on-window-detected]]
+# if.app-id = "com.mitchellh.ghostty"
+# run = ["layout tiling"]
