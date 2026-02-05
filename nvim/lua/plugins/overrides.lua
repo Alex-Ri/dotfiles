@@ -13,7 +13,17 @@ return {
   {
     "saghen/blink.cmp",
     opts = function(_, opts)
-      opts.completion.menu.auto_show = false
+      opts.completion = {
+        ghost_text = { enabled = true },
+        menu = {
+          border = "rounded",
+          auto_show = false,
+        },
+        documentation = {
+          auto_show = true,
+          window = { border = "rounded" },
+        },
+      }
     end,
   },
   {
